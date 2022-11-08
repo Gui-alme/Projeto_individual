@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style-all.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Riven</title>
+</head>
+<body>
+    <!-- MENU DO SITE -->
+    <header>
+        <div class="container-cabecalho">
+            <a href="index.html">
+                <div class="imagemRiven">
+                    <h1>RIVEN</h1>
+                    <img class="logoImg" src="assets/img/rivenSword.png" alt="imagem da riven">
+                </div>
+            </a>
+            <nav>
+                <ul class="menu">
+                    <a href="#"><li>Sobre mim</li></a>
+                    <a href="#"><li>In game</li></a>
+                    <a href="#"><li>|</li></a>
+                    <a href="login.html"><li>Login</li></a>
+                    <a href="cadastro.html"><li>Cadastro</li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <div class="form">
+                <h1>Bem vindo de volta!</h1>
+                <div class="div_form">
+                    <label class="labels" for="input_username">Usename:</label>
+                    <input class="inputs" type="text" id="input_username">
+                    <label class="labels" for="input_senha">Senha:</label>
+                    <input class="inputs" type="text" id="input_senha">
+                </div>
+                <button class="btn_login" onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.container{
+    width: 100%;
+    height: 93vh;
+    background-image: url("../assets/img/banner2Riven.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 25%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2%;
+    border-radius: 10px;
+    padding: 2% 0;
+    background-color: #e8f4f7;
+    border: 1px solid black;
+}
+.div_form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.labels{
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.inputs{
+    width: 100%;
+    height: 3vh;
+    border-radius: 3px;
+    border: 1px solid black;
+
+}
+.btn_login{
+    width: 30%;
+    height: 10%;
+    align-self: center;
+    background-color: rgb(44, 84, 145);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    color:white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn_login:hover{
+    box-shadow: 4px 6px 9px 3px rgba(161,161,161,1);
+    transition: 0.3s;
+}
