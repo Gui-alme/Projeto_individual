@@ -21,7 +21,7 @@ var sql = require('mssql');
 var mySqlConfig = {
     host: "localhost",
     database: "projetoRiven",
-    user: "root", //pc's da faculdade mudar para "aluno"
+    user: "aluno", //pc's da faculdade mudar para "aluno"
     password: "sptech",
 };
 
