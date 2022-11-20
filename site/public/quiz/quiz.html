@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/quiz.css">
     <title>Quiz</title>
 </head>
-<body onload="atualizarQuiz()">
+<body onload="atualizarQuiz(), atualizarTentativa()">
     <header>
         <div class="container-cabecalho">
             <a href="../index.html">
@@ -28,7 +28,6 @@
     <main>
         <section class="container">
             <div id="containerQuiz" class="containerQuiz">
-
                 <!-- modal quiz -->
                 <!-- <h1 class="titleQuiz">QUIZ<span class="titleQuizRiven">RIVEN</span></h1> -->
                 <!-- <p class="perguntaQuiz">1. "Pergunta"</p>
@@ -47,8 +46,27 @@
                     <button class="btn_relatorio">Jogar novamente</button>
                     <button class="btn_relatorio">Tentativas anteriores</button>
                 </div> -->
-
             </div>
+        </section>
+        <section id="containerTentativas" class="containerTentativas">
+            <img class="imgTentativa" src="../assets/img/kisspng-riven-league-of-legends-art-youtube-riot-games-lol-5ac70ba40056b9.3258373215229940840014.png" alt="">
+            <div id="tentativas" class="tentativa">
+                <!-- modal tentativas -->
+                <h1 class="titulo">TENTATIVAS</h1>
+                <!-- <div class="div_tentativa">
+                    <div class="labels">
+                        <span>Número da tentativa:</span>
+                        <span>Número de respostas certas:</span>
+                        <span>Número de respostas erradas:</span>
+                    </div>
+                    <div class="respostas">
+                        <span>1</span>
+                        <span>3</span>
+                        <span>2</span>
+                    </div>
+                </div>   -->
+            </div>
+            <img class="imgTentativa" src="../assets/img/toppng.com-riven-1164x687.png" alt="">
         </section>
     </main>
     <footer>

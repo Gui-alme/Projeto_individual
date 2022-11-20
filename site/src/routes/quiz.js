@@ -7,6 +7,10 @@ router.get("/listar", function (req, res) {
     quizController.listar(req, res);
 });
 
+router.get("/listarTentativa/:idPerfil", function (req, res) {
+    quizController.listarTentativa(req, res);
+});
+
 router.post("/cadastrar/:idPerfil", function (req, res) {
     quizController.cadastrar(req, res);
 })

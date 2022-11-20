@@ -14,6 +14,22 @@ function listar(req, res) {
     });
 }
 
+function listarTentativa(req, res) {
+    var idPerfil = req.params.idPerfil;
+
+    quizModel.listarTentativa(idPerfil).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var qtd_certas = req.body.qtd_certas;
@@ -28,7 +44,7 @@ function cadastrar(req, res) {
     } else if (idPerfil == undefined) {
         res.status(400).send("Você não está logado");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         quizModel.cadastrar(qtd_certas, qtd_erradas, idPerfil)
             .then(
@@ -50,5 +66,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     listar,
-    cadastrar
+    cadastrar,
+    listarTentativa
 }

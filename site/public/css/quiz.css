@@ -9,7 +9,7 @@
 .containerQuiz{
     width: 50%;
     height: 70%;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #191919;
     border: 1px solid rgb(196, 161, 47);
     display: flex;
@@ -22,11 +22,12 @@
     width: 60%;
     height: 10%;
     background-color: grey;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 10%;
     transition: 0.3s;
+    font-weight: 600;
 }
 .respostasQuiz:hover{
     box-shadow: 1px 1px 10px rgb(255, 255, 255);
@@ -65,9 +66,23 @@
     justify-content: center;
     gap: 10%;
 }
-.btn_relatorio{
+.btn_jogardnv{
     width: 30%;
     height: 30%;
+    font-size: 1.2rem;
+    background-color: rgb(196, 161, 47);
+    border: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.btn_jogardnv:hover{
+    box-shadow: 10px 10px 10px black;
+    transition: 0.4s;
+}
+.btn_relatorio{
+    width: 100%;
+    height: 100%;
     font-size: 1.2rem;
     background-color: rgb(196, 161, 47);
     border: none;
@@ -78,4 +93,84 @@
 .btn_relatorio:hover{
     box-shadow: 10px 10px 10px black;
     transition: 0.4s;
+}
+.ancoraTentativas{
+    width: 30%;
+    height: 30%;
+    font-size: 1.2rem;
+    background-color: rgb(196, 161, 47);
+    border: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.containerTentativas{
+    width: 100%;
+    background-color: #191919;
+    border-top: 1px solid rgb(196, 161, 47);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 10vh;
+}
+.tentativa{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 5vh;
+    padding: 0 5%;
+    padding-bottom: 5%;
+}
+.div_tentativa{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    background-color: #1f1f1f;
+    border: 3px solid rgb(196, 161, 47);
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    font-size: 1.5rem;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+    gap: 3vh;
+    justify-content: center;
+    align-items: flex-end;
+    border-left: 1px solid rgb(196, 161, 47);
+}
+.respostas{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+    gap: 3vh;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(196, 161, 47);
+}
+.imgTentativa{
+    width: 30%;
+}
+.green_span{
+    color: green;
+    font-size: 1.6rem;
+}
+.red_span{
+    color: rgb(255, 0, 0);
+    font-size: 1.6rem;
+}
+.yellow_span{
+    color: rgb(196, 161, 47);
+    font-size: 1.6rem;
+}
+.titulo{
+    font-size: 2.5rem;
 }

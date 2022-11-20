@@ -58,13 +58,13 @@ function atualizarQuiz() {
                         resposta4.innerHTML = publicacao.resposta4;
     
                         respostaQuiz1.className = "respostasQuiz";
-                        respostaQuiz1.setAttribute("onclick", "atualizarQuiz(), respostaErrada()");
+                        respostaQuiz1.setAttribute("onclick", "respostaErrada(), atualizarQuiz()");
                         respostaQuiz2.className = "respostasQuiz";
-                        respostaQuiz2.setAttribute("onclick", "atualizarQuiz(), respostaErrada()");
+                        respostaQuiz2.setAttribute("onclick", "respostaErrada(), atualizarQuiz()");
                         respostaQuiz3.className = "respostasQuiz";
-                        respostaQuiz3.setAttribute("onclick", "atualizarQuiz(), respostaErrada()");
+                        respostaQuiz3.setAttribute("onclick", "respostaErrada(), atualizarQuiz()");
                         respostaQuiz4.className = "respostasQuiz";
-                        respostaQuiz4.setAttribute("onclick", "atualizarQuiz(), respostaErrada()");
+                        respostaQuiz4.setAttribute("onclick", "respostaErrada(), atualizarQuiz()");
     
     
                         respostaQuiz1.appendChild(spanLetraA);
@@ -120,6 +120,7 @@ function respostaErrada() {
 }
 
 function relatorio() {
+    contadorQuiz = 0;
     var container = document.getElementById("containerQuiz");
     container.innerHTML = "";
     var titulo = document.createElement("h1");
@@ -129,15 +130,19 @@ function relatorio() {
     var qtd_erradas = document.createElement("span");
     var div_buttons = document.createElement("div")
     var jogarDnv = document.createElement("button");
+    var ancora = document.createElement("a");
     var verRelatorio = document.createElement("button")
 
     titulo.className = "titleQuiz";
     titulo_certas.className = "respostasRelatorio";
     titulo_erradas.className = "respostasRelatorio";
     div_buttons.className = "div_buttons";
-    jogarDnv.className = "btn_relatorio";
+    jogarDnv.className = "btn_jogardnv";
     verRelatorio.className = "btn_relatorio";
+    ancora.className = "ancoraTentativas"
 
+    jogarDnv.setAttribute("onclick", "atualizarQuiz()")
+    ancora.setAttribute("href", "#containerTentativas");
 
     qtd_certas.id = "span_qtd_certas";
     qtd_certas.className = "respostasRelatorio";
@@ -153,7 +158,8 @@ function relatorio() {
     verRelatorio.innerHTML = "Ver tentativas anteriores";
 
     div_buttons.appendChild(jogarDnv);
-    div_buttons.appendChild(verRelatorio);
+    ancora.appendChild(verRelatorio);
+    div_buttons.appendChild(ancora);
 
     container.appendChild(titulo);
     container.appendChild(titulo_certas);
@@ -163,6 +169,8 @@ function relatorio() {
     container.appendChild(div_buttons);
 
     computarTentativa();
+    certas = 0;
+    erradas = 0;
 }
 function computarTentativa(){
     var idPerfil = sessionStorage.ID_USUARIO;
@@ -186,6 +194,7 @@ function computarTentativa(){
 
         if (resposta.ok) {
             console.log("tentativa cadastrada");
+            atualizarTentativa();
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
@@ -193,4 +202,71 @@ function computarTentativa(){
         console.log(`#ERRO: ${resposta}`);
     });
     return false
+}
+
+function atualizarTentativa() {
+    var idPerfil = sessionStorage.ID_USUARIO;
+
+    fetch(`/quiz/listarTentativa/${idPerfil}`).then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                throw "Nenhum resultado encontrado!!";
+            }
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                var container = document.getElementById("tentativas");
+                container.innerHTML = "";
+                var titulo = document.createElement("h1");
+                titulo.className = "titulo"
+                titulo.innerHTML = "TENTATIVAS";
+                container.appendChild(titulo);
+                for (let i = 0; i < resposta.length; i++) {
+                    var posicao = resposta[i];
+
+                    var div_container = document.createElement("div");
+                    var labels = document.createElement("div");
+                    var respostas = document.createElement("div");
+                    var spanTentativa = document.createElement("span");
+                    var spanCertas = document.createElement("span");
+                    var spanErradas = document.createElement("span");
+                    var spanQtdTentativas = document.createElement("span");
+                    var spanQtdCertas = document.createElement("span");
+                    var spanQtdErradas = document.createElement("span");
+
+                    div_container.className = "div_tentativa";
+                    labels.className = "labels";
+                    respostas.className = "respostas";
+                    spanQtdCertas.className = "green_span";
+                    spanQtdErradas.className = "red_span";
+                    spanQtdTentativas.className = "yellow_span"
+
+                    spanTentativa.innerHTML = "Tentativa número:";
+                    spanCertas.innerHTML = "Respostas certas: ";
+                    spanErradas.innerHTML = "Respostas erradas: ";
+
+                    spanQtdTentativas.innerHTML = i+1;
+                    spanQtdCertas.innerHTML = posicao.respostas_certas;
+                    spanQtdErradas.innerHTML = posicao.respostas_erradas;
+
+                    labels.appendChild(spanTentativa);
+                    labels.appendChild(spanCertas);
+                    labels.appendChild(spanErradas);
+
+                    respostas.appendChild(spanQtdTentativas);
+                    respostas.appendChild(spanQtdCertas);
+                    respostas.appendChild(spanQtdErradas);
+
+                    div_container.appendChild(labels);
+                    div_container.appendChild(respostas);
+                    container.appendChild(div_container);                    
+                }
+
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+    });
 }
