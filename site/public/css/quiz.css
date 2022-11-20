@@ -26,11 +26,13 @@
     display: flex;
     align-items: center;
     gap: 10%;
+    transition: 0.3s;
 }
 .respostasQuiz:hover{
-    box-shadow: 2px 2px 10px rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
     color: white;
     cursor: pointer;
+    transition: 0.3s;
 }
 .titleQuiz{
     color: white;
@@ -50,4 +52,30 @@
 .divVerde{
     box-shadow: 2px 2px 10px rgb(0, 255, 76);
     background-color: green;
+}
+.respostasRelatorio{
+    color: white;
+    font-size: 1.5rem;
+}
+.div_buttons{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+.btn_relatorio{
+    width: 30%;
+    height: 30%;
+    font-size: 1.2rem;
+    background-color: rgb(196, 161, 47);
+    border: none;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.btn_relatorio:hover{
+    box-shadow: 10px 10px 10px black;
+    transition: 0.4s;
 }
