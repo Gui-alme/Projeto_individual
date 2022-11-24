@@ -1,0 +1,63 @@
+.container{
+    width: 100%;
+    height: 90vh;
+    background-image: url("../assets/img/bgAvaliacoes.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avaliacao{
+    width: 70%;
+    height: 70%;
+    background-color: #191919;
+    display: flex;
+}
+.avaliacaoUser{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+.fazerAvaliacao{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnsVotacao{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+.btnVotacao{
+    width: 30%;
+    height: 80%;
+}
+.avaliacaoGrafico{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.qtdRegistros{
+    width: 80%;
+    height: 10%;
+    color: white;
+}
+.grafico{
+    width: 80%;
+    height: 60%;
+}
+.paragrafo{
+    font-size: 120%;
+}
