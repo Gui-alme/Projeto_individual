@@ -37,13 +37,13 @@
 }
 .titleQuiz{
     color: white;
-    font-size: 2rem;
+    font-size: 200%;
 }
 .titleQuizRiven{
     color: rgb(196, 161, 47);
 }
 .perguntaQuiz{
-    font-size: 1.5rem;
+    font-size: 150%;
     color: white;
 }
 .letra{
@@ -56,7 +56,7 @@
 }
 .respostasRelatorio{
     color: white;
-    font-size: 1.5rem;
+    font-size: 150%;
 }
 .div_buttons{
     display: flex;
@@ -69,7 +69,8 @@
 .btn_jogardnv{
     width: 30%;
     height: 30%;
-    font-size: 1.2rem;
+    font-size: 100%;
+    font-weight: bold;
     background-color: rgb(196, 161, 47);
     border: none;
     border-radius: 10px;
@@ -83,7 +84,8 @@
 .btn_relatorio{
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 100%;
+    font-weight: bold;
     background-color: rgb(196, 161, 47);
     border: none;
     border-radius: 10px;
@@ -97,7 +99,7 @@
 .ancoraTentativas{
     width: 30%;
     height: 30%;
-    font-size: 1.2rem;
+    font-size: 100%;
     background-color: rgb(196, 161, 47);
     border: none;
     border-radius: 10px;
@@ -134,7 +136,7 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 10px 10px 10px black;
-    font-size: 1.5rem;
+    font-size: 100%;
 }
 .labels{
     display: flex;
@@ -161,15 +163,15 @@
 }
 .green_span{
     color: green;
-    font-size: 1.6rem;
+    font-size: 110%;
 }
 .red_span{
     color: rgb(255, 0, 0);
-    font-size: 1.6rem;
+    font-size: 110%;
 }
 .yellow_span{
     color: rgb(196, 161, 47);
-    font-size: 1.6rem;
+    font-size: 110%;
 }
 .titulo{
     font-size: 2.5rem;

@@ -59,7 +59,7 @@ function confirmarLogin(){
                 sessionStorage.ID_USUARIO = json.idPerfil;
 
                 setTimeout(function () {
-                    window.location = "../quiz/quiz.html";
+                    window.location = "../quiz/menu.html";
                 }, 0); // apenas para exibir o loading
 
             });
