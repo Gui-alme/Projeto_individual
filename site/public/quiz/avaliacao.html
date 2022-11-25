@@ -34,9 +34,14 @@
                     <h1>Deixe sua Avaliação!</h1>
                     <div class="fazerAvaliacao">
                         <div class="btnsVotacao">
-                            <button class="btnVotacao">Gostei</button>
-                            <button class="btnVotacao">Não Gostei</button>
+                            <button class="btnVotacaoLike" onclick="gostei()">Like</button>
+                            <button class="btnVotacaoDislike" onclick="naoGostei()">Dislike</button>
                         </div>
+                        <div class="descricao">
+                            <span class="titulo-descricao">Descrição:</span>
+                            <textarea name="" id="input_descricao" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btnVotacaoEnviar" onclick="cadastrar()">Enviar!</button>
                     </div>
                 </div>
                 <div class="avaliacaoGrafico">
@@ -55,3 +60,4 @@
     </footer>
 </body>
 </html>
+<script src="../js/avaliacao.js"></script>
