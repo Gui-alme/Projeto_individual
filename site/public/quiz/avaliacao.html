@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-all.css">
     <link rel="stylesheet" href="../css/avaliacao.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Avaliações</title>
 </head>
-<body>
+
+<body onload="chamarAvaliacao(), qtdPerfil(), obterDadosGrafico()">
     <header>
         <div class="container-cabecalho">
             <a href="../index.html">
@@ -19,10 +22,19 @@
             </a>
             <nav>
                 <ul class="menu">
-                    <a href="#"><li>Cruzadinha</li></a>
-                    <a href="quiz.html"><li>Quiz</li></a>
-                    <a href="#"><li>Avaliações</li></a>
-                    <a href="#"><li>Guilherme<img class="iconPerfil" src="../assets/svg/iconPerfil.svg" alt="icone perfil usuário"></li></a>
+                    <a href="#">
+                        <li>Cruzadinha</li>
+                    </a>
+                    <a href="quiz.html">
+                        <li>Quiz</li>
+                    </a>
+                    <a href="#">
+                        <li>Avaliações</li>
+                    </a>
+                    <a href="#">
+                        <li>Guilherme<img class="iconPerfil" src="../assets/svg/iconPerfil.svg"
+                                alt="icone perfil usuário"></li>
+                    </a>
                 </ul>
             </nav>
         </div>
@@ -30,26 +42,35 @@
     <main>
         <section class="container">
             <div class="avaliacao">
-                <div class="avaliacaoUser">
-                    <h1>Deixe sua Avaliação!</h1>
-                    <div class="fazerAvaliacao">
+                <div id="avaliacaoUser" class="avaliacaoUser">
+                    <!-- <h1>Deixe sua Avaliação!</h1>
+                    <div id="divAvaliacao" class="fazerAvaliacao">
                         <div class="btnsVotacao">
-                            <button class="btnVotacaoLike" onclick="gostei()">Like</button>
-                            <button class="btnVotacaoDislike" onclick="naoGostei()">Dislike</button>
+                            <button id="btnLike" class="btnVotacaoLike" onclick="gostei(), clique1()">Like</button>
+                            <button id="btnDislike" class="btnVotacaoDislike" onclick="naoGostei(), clique2()">Dislike</button>
                         </div>
                         <div class="descricao">
                             <span class="titulo-descricao">Descrição:</span>
                             <textarea name="" id="input_descricao" cols="30" rows="10"></textarea>
                         </div>
-                        <button class="btnVotacaoEnviar" onclick="cadastrar()">Enviar!</button>
+                        <button class="btnVotacaoEnviar" onclick="cadastrar()">Enviar!</button> -->
+
+                    <!-- Modal Avaliação do Usuário -->
+                    <!-- <h1>Sua avaliação!</h1>
+                    <div id="avaliacaoResultado" class="avaliacaoResultado">
+                        <div class="votacao"><p>Gostei</p></div>
+                        <div class="descricao"><p class="descricaoTxt">AAAAAAAAAAAAAAA</p></div>
                     </div>
+                    <button>Editar!</button> -->
                 </div>
                 <div class="avaliacaoGrafico">
                     <div class="qtdRegistros">
-                        <p class="paragrafo">Número de pessoas cadastradas no site: <span>2004</span></p>
+                        <p class="paragrafo">Número de pessoas cadastradas no site: <span
+                                id="qtdPerfilCadastrado"></span></p>
                     </div>
-                    <div class="grafico">
-
+                    <div id="grafico" class="grafico">
+                        <span style="color: white">Ainda não temos 2 avaliações para gerar o gráfico</span>
+                        <!-- <canvas id="graficoVotacaoQtd"></canvas> -->
                     </div>
                 </div>
             </div>
@@ -59,5 +80,6 @@
 
     </footer>
 </body>
+
 </html>
 <script src="../js/avaliacao.js"></script>

@@ -13,6 +13,7 @@
     background-color: #191919;
     display: flex;
     border-radius: 10px;
+    border: 1px solid rgb(196, 161, 47);
 }
 .avaliacaoUser{
     width: 50%;
@@ -45,7 +46,7 @@
 .btnVotacaoLike{
     width: 50%;
     height: 80%;
-    background-color: rgb(90, 173, 90);
+    background-color: rgb(51, 99, 51);
     border: none;
     border-radius: 2px;
     color: white;
@@ -61,7 +62,7 @@
 .btnVotacaoDislike{
     width: 50%;
     height: 80%;
-    background-color: rgb(196, 86, 86);
+    background-color: rgb(112, 49, 49);
     border: none;
     border-radius: 2px;
     color: white;
@@ -80,7 +81,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .qtdRegistros{
     width: 80%;
@@ -118,6 +119,81 @@
     margin-top: 5%;
 }
 .btnVotacaoEnviar:hover{
+    box-shadow: 10px 10px 10px black;
+    transition: 0.4s;
+}
+.btnAcionado1{
+    width: 50%;
+    height: 80%;
+    background-color: rgb(90, 173, 90);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-size: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.btnAcionado2{
+    width: 50%;
+    height: 80%;
+    background-color: rgb(196, 86, 86);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-size: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.avaliacaoResultado{
+    width: 80%;
+    height: 15%;
+    border: 2px solid rgb(196, 161, 47);
+    display: flex;
+    align-items: center;
+}
+.votacao{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+.votacao2{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(196, 86, 86);
+}
+.pVoto{
+    font-weight: 700;
+}
+.descricaoVoto{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.descricaoTxt{
+    margin-left: 0.5vw;
+}
+.btnEditar{
+    width: 30%;
+    height: 5%;
+    font-size: 100%;
+    font-weight: bold;
+    background-color: rgb(196, 161, 47);
+    border: none;
+    border-radius: 2px;
+    transition: 0.4s;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.btnEditar:hover{
     box-shadow: 10px 10px 10px black;
     transition: 0.4s;
 }
