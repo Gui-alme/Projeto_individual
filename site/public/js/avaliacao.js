@@ -278,3 +278,68 @@ function criarGrafico(){
         config
     );
 }
+
+function listarAvaliacoes(){
+    fetch(`/avaliacao/listarAvaliacoes/`).then(function (resposta) {
+        if (resposta.ok) {
+            if (resposta.status == 204) {
+                throw "Nenhum resultado encontrado!!";
+            }
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos: ", JSON.stringify(resposta));    
+                
+                var container = document.getElementById("avaliacoes");
+                container.innerHTML = "";
+                var titulo = document.createElement("h1");
+                titulo.innerHTML = "Outras Avaliações";
+                container.appendChild(titulo);
+                for(var i = 0; i < resposta.length; i++){
+                    var nome = resposta[i].nome;
+                    var voto = resposta[i].voto;
+                    var descricao = resposta[i].descricao;
+                    
+                    var avaliacaoResultado = document.createElement("div");
+                    avaliacaoResultado.className = "avaliacoesResultado";
+
+                    var divVotacao = document.createElement("div");
+
+                    var divDescricao = document.createElement("div");
+                    divDescricao.className = "descricaoVoto2";
+
+                    var p = document.createElement("p");
+                    p.className = "pVoto";
+                    if(voto == "sim"){
+                        p.innerHTML = "LIKE";
+                        divVotacao.className = "votacao";
+                    }else{
+                        p.innerHTML = "DISLIKE";
+                        divVotacao.className = "votacao2";
+                    }
+
+                    var pDescNome = document.createElement("p");
+                    pDescNome.className = "descricaoTxt";
+                    pDescNome.innerHTML = "Nome: ";
+
+                    var pDesc = document.createElement("p");
+                    pDesc.className = "descricaoTxt";
+                    pDesc.innerHTML = descricao;
+
+                    var spanNome = document.createElement("span");
+                    spanNome.innerHTML = nome;
+
+                    pDescNome.appendChild(spanNome);
+                    divVotacao.appendChild(p);
+                    divDescricao.appendChild(pDescNome);
+                    divDescricao.appendChild(pDesc);
+                    avaliacaoResultado.appendChild(divVotacao);
+                    avaliacaoResultado.appendChild(divDescricao);
+                    container.appendChild(avaliacaoResultado);
+                }
+            });
+        } else {
+            throw ('Houve um erro na API!');
+        }
+    }).catch(function (resposta) {
+        console.error(resposta);
+    });
+}

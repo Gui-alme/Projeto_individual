@@ -15,6 +15,10 @@ router.get("/voto", function (req, res) {
     avaliacaoController.voto(req, res);
 });
 
+router.get("/listarAvaliacoes", function (req, res) {
+    avaliacaoController.listarAvaliacoes(req, res);
+});
+
 router.put("/atualizar/:idPerfil", function (req, res) {
     avaliacaoController.atualizar(req, res);
 });
