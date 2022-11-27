@@ -5,8 +5,9 @@
     padding: 0;
 }
 body{  
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     scroll-behavior: smooth;
+    background-color: black;
 }
 header{
     background-color: #191919;
@@ -56,4 +57,52 @@ a{
     margin-left: 1vh;
     fill: white;
     transition: 0.3s;
+}
+.footer{
+    margin-top: 2vh;
+    width: 100%;
+    height: 20vh;
+    background-color: #191919;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contatos{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    padding: 1% 0;
+    border-bottom: 1px solid white;
+}
+.contato{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    gap: 10%;
+}
+.redes{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25%;
+    gap: 5%;
+}
+.iconAncora{
+    width: 5%;
+}
+.iconRede{
+    width: 100%;
+}
+.footerFrase{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
 }

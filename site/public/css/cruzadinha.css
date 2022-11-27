@@ -1,0 +1,106 @@
+.container{
+    width: 100%;
+    height: 90vh;
+    background-image: url("../assets/img/bannerRiven5.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.titulo{
+    padding: 1%;
+    background-color: #191919;
+    border-radius: 10px;
+}
+.cruzada{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cruzadinha{
+    height: 100%;
+    width: 40%;
+    background-color: #191919;
+    border: 1px solid rgb(196, 161, 47);
+    border-radius: 10px;
+}
+.textoCruzada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(97, 69, 69, 0.253);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    height: 20%;
+    border-bottom: 1px solid rgb(196, 161, 47);
+}
+.dicas{
+    width: 40%;
+    height: 100%;
+    background-color: #191919;
+    border: 1px solid rgb(196, 161, 47);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dicasRespostas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 8%;
+}
+.btnVerificar{
+    width: 30%;
+    height: 8%;
+    align-self: center;
+    background-color: rgb(196, 161, 47);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btnVerificar:hover{
+    box-shadow: 4px 6px 9px 3px black;
+    transition: 0.3s;
+}
+.btnNumero{
+    width: 6%;
+    height: 6%;
+    background-color: transparent;
+    border: none;
+    margin: 1px;
+    color: white;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.ipt_normal{
+    width: 6%;
+    height: 6%;
+    background-color: white;
+    border: 1px solid black;
+    margin: 1px;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.ipt_vazia{
+    width: 6%;
+    height: 6%;
+    background-color: black;
+    border: 1px solid white;
+    opacity: 0;
+    margin: 1px;
+}

@@ -128,6 +128,9 @@ function relatorio() {
     var qtd_certas = document.createElement("span");
     var titulo_erradas = document.createElement("span");
     var qtd_erradas = document.createElement("span");
+    var divElo = document.createElement("div");
+    var spanElo = document.createElement("span");
+    var respostaElo = document.createElement("span")
     var div_buttons = document.createElement("div")
     var jogarDnv = document.createElement("button");
     var ancora = document.createElement("a");
@@ -136,6 +139,7 @@ function relatorio() {
     titulo.className = "titleQuiz";
     titulo_certas.className = "respostasRelatorio";
     titulo_erradas.className = "respostasRelatorio";
+    divElo.className = "elo";
     div_buttons.className = "div_buttons";
     jogarDnv.className = "btn_jogardnv";
     verRelatorio.className = "btn_relatorio";
@@ -154,18 +158,34 @@ function relatorio() {
     qtd_certas.innerHTML = certas;
     titulo_erradas.innerHTML = "RESPOSTAS ERRADAS:";
     qtd_erradas.innerHTML = erradas;
+    spanElo.innerHTML = "SEU ELO É:"
+
+    if(certas == 0){
+        respostaElo.innerHTML = `<span style="color: #ffffff;">PRATA</span> - melhore um pouco`
+    } else if(certas == 1){
+        respostaElo.innerHTML = `<span style="color: #f7f2c8;">OURO</span> - ainda tem muito para aprender`
+    } else if(certas <= 3){
+        respostaElo.innerHTML = `<span style="color: #016159;">PLATINA</span> - aprendeu muito, porém melhore`
+    } else if(certas == 4){
+        respostaElo.innerHTML = `<span style="color: #800000;">MESTRE</span> - está quase chegando lá`
+    } else if(certas == 5){
+        respostaElo.innerHTML = `<span style="color: #ccac00;">CHALLANGER</span> - você está entre os melhores!!!`
+    }
+
     jogarDnv.innerHTML = "Jogar novamente";
     verRelatorio.innerHTML = "Ver tentativas anteriores";
 
     div_buttons.appendChild(jogarDnv);
     ancora.appendChild(verRelatorio);
     div_buttons.appendChild(ancora);
-
+    divElo.appendChild(spanElo);
+    divElo.appendChild(respostaElo);
     container.appendChild(titulo);
     container.appendChild(titulo_certas);
     container.appendChild(qtd_certas);
     container.appendChild(titulo_erradas);
     container.appendChild(qtd_erradas);
+    container.appendChild(divElo);
     container.appendChild(div_buttons);
 
     computarTentativa();
@@ -221,8 +241,8 @@ function atualizarTentativa() {
                 titulo.className = "titulo"
                 titulo.innerHTML = "TENTATIVAS";
                 container.appendChild(titulo);
-                for (let i = 0; i < resposta.length; i++) {
-                    var posicao = resposta[i];
+                for (let i = 1; i <= resposta.length; i++) {
+                    var posicao = resposta[resposta.length - i];
 
                     var div_container = document.createElement("div");
                     var labels = document.createElement("div");
@@ -230,32 +250,49 @@ function atualizarTentativa() {
                     var spanTentativa = document.createElement("span");
                     var spanCertas = document.createElement("span");
                     var spanErradas = document.createElement("span");
+                    var spanElo = document.createElement("span");
                     var spanQtdTentativas = document.createElement("span");
                     var spanQtdCertas = document.createElement("span");
                     var spanQtdErradas = document.createElement("span");
+                    var spanRespostaElo = document.createElement("span");
+
 
                     div_container.className = "div_tentativa";
                     labels.className = "labels";
                     respostas.className = "respostas";
                     spanQtdCertas.className = "green_span";
                     spanQtdErradas.className = "red_span";
-                    spanQtdTentativas.className = "yellow_span"
+                    spanQtdTentativas.className = "white_span"
 
                     spanTentativa.innerHTML = "Tentativa número:";
                     spanCertas.innerHTML = "Respostas certas: ";
                     spanErradas.innerHTML = "Respostas erradas: ";
+                    spanElo.innerHTML = "Ranking da tentativa:";
 
-                    spanQtdTentativas.innerHTML = i+1;
+                    spanQtdTentativas.innerHTML = (resposta.length - i) + 1;
                     spanQtdCertas.innerHTML = posicao.respostas_certas;
                     spanQtdErradas.innerHTML = posicao.respostas_erradas;
+                    if(posicao.respostas_certas == 0){
+                        spanRespostaElo.innerHTML =  `<span style="color: #ffffff">PRATA</span>`
+                    } else if(posicao.respostas_certas == 1){
+                        spanRespostaElo.innerHTML =  `<span style="color: #f7f2c8">OURO</span>`
+                    } else if(posicao.respostas_certas <= 3){
+                        spanRespostaElo.innerHTML =  `<span style="color: #016159">PLATINA</span>`
+                    } else if(posicao.respostas_certas == 4){
+                        spanRespostaElo.innerHTML =  `<span style="color: #800000">MESTRE</span>`
+                    } else{
+                        spanRespostaElo.innerHTML =  `<span style="color: #ccac00">CHALLANGER</span>`
+                    }
 
                     labels.appendChild(spanTentativa);
                     labels.appendChild(spanCertas);
                     labels.appendChild(spanErradas);
+                    labels.appendChild(spanElo);
 
                     respostas.appendChild(spanQtdTentativas);
                     respostas.appendChild(spanQtdCertas);
                     respostas.appendChild(spanQtdErradas);
+                    respostas.appendChild(spanRespostaElo);
 
                     div_container.appendChild(labels);
                     div_container.appendChild(respostas);

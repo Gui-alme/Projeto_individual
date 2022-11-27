@@ -9,7 +9,7 @@
 }
 .form{
     width: 25%;
-    height: 40%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,8 +17,9 @@
     margin-top: 2%;
     border-radius: 10px;
     padding: 2% 0;
-    background-color: #e8f4f7;
-    border: 1px solid black;
+    background-color: #f2e9e43d;
+    backdrop-filter: blur(10px);
+    color: white;
 }
 .div_form{
     display: flex;
@@ -26,21 +27,26 @@
     width: 60%;
 }
 .labels{
-    color: black;
+    color: white;
     font-size: 1.2rem;
     margin-top: 10%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 .inputs{
     width: 100%;
     height: 3vh;
-    border-radius: 3px;
-    border: 1px solid black;
-
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-left: 2%;
+    color: white;
+}
+.inputs:focus{
+    outline: 0;
 }
 .btn_login{
     width: 30%;
-    height: 10%;
+    height: 7%;
     align-self: center;
     background-color: rgb(44, 84, 145);
     border: none;
@@ -52,6 +58,6 @@
     cursor: pointer;
 }
 .btn_login:hover{
-    box-shadow: 4px 6px 9px 3px rgba(161,161,161,1);
+    box-shadow: 4px 6px 9px 3px black;
     transition: 0.3s;
 }

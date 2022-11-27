@@ -181,9 +181,18 @@
 .descricaoTxt{
     margin-left: 0.5vw;
 }
+.txtArea{
+    border: none;
+    display: flex;
+    text-align: center;
+    font-size: 150%;
+}
+.txtArea:focus{
+    outline: 0;
+}
 .btnEditar{
     width: 30%;
-    height: 5%;
+    height: 6%;
     font-size: 100%;
     font-weight: bold;
     background-color: rgb(196, 161, 47);

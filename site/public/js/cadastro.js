@@ -9,10 +9,12 @@ function cadastrar(){
 var validarNome = false;
 var validarUsername = false;
 var validarSenha = false;
+var validarEmail = false;
 function validarCampos(){
     var nome = input_nome.value;
     var username = input_username.value;
     var senha = input_senha.value;
+    var email = input_email.value;
 
     if(nome.length >= 3){
         validarNome = true;
@@ -35,7 +37,14 @@ function validarCampos(){
         alert("Senha deve conter mais de 3 caracteres e pelo menos 1 @")
     }
 
-    if(validarNome && validarUsername && validarSenha){
+    if(email.indexOf("@") > -1 && email.length >= 8){
+        validarEmail = true;
+    } else{
+        validarEmail = false;
+        alert("Email deve conter um @ e mais de 8 caracteres");
+    }
+
+    if(validarNome && validarUsername && validarSenha && validarEmail){
         return true;
     }
 }
@@ -45,6 +54,7 @@ function confirmarCadastro(){
     var nome = input_nome.value;
     var username = input_username.value;
     var senha = input_senha.value;
+    var email = input_email.value;
 
       // Enviando o valor da nova input
       fetch("/usuarios/cadastrar", {
@@ -58,6 +68,7 @@ function confirmarCadastro(){
             nomeServer: nome,
             usernameServer: username,
             senhaServer: senha,
+            emailServer: email
         })
     }).then(function (resposta) {
 

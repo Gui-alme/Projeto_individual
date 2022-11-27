@@ -115,6 +115,7 @@ function fazerAvaliacao(){
 
     var textArea = document.createElement("textArea");
     textArea.id = "input_descricao";
+    textArea.className = "txtArea";
     textArea.setAttribute("rows", "10");
 
     var buttonEnviar = document.createElement("button");

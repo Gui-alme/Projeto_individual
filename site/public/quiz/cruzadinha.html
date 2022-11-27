@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-all.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <title>Menu</title>
+    <link rel="stylesheet" href="../css/cruzadinha.css">
+    <title>Cruzadinha</title>
 </head>
 <body>
     <header>
@@ -29,21 +29,39 @@
     </header>
     <main>
         <section class="container">
-            <div class="cards">
-                <div class="card">
-                    <img class="icones" src="../assets/img/iconCruzadinha.png" alt="icone do quiz">
-                    <p class="paragrafo">Jogue um jogo de palavras cruzadas, com assuntos abordados sobre a campeã, demonstrando o quanto você conhece sobre ela.</p>
-                    <a class="ancora" href="cruzadinha.html"><button class="btnMenu">Jogar Cruzadinha</button></a>
+            <h1 class="titulo">CRUZADINHA <span style="color: rgb(196, 161, 47);">RIVEN</span></h1>
+            <div class="cruzada">
+                <div id="cruzadinha" class="cruzadinha">
+                    <div class="textoCruzada">
+                        <p>PALAVRAS CRUZADA DA <span style="color: rgb(196, 161, 47);">RIVEN</span> PARA TESTAR SEU CONHECIMENTO</p>
+                    </div>
+                    <!-- <button class="btnNumero">4</button>
+                    <input class="ipt_vazia" type="text">
+                    <input class="ipt_normal" type="text"> -->
                 </div>
-                <div class="card">
-                    <img class="icones" src="../assets/img/iconQuiz.png" alt="icone do quiz">
-                    <p class="paragrafo">Jogue um jogo de perguntas e respostas, abordando sua história, equipamentos, eventos externos e habilidades.</p>
-                    <a class="ancora" href="quiz.html"><button class="btnMenu">Jogar Quiz</button></a> 
-                </div>
-                <div class="card">
-                    <img class="icones" src="../assets/img/iconAvaliacoes.png" alt="icone do quiz">
-                    <p class="paragrafo">Deixe sua avaliação do nosso site, seja ela positiva ou não, com algum comentário nos parabenizando ou com algum feedback para melhorias.</p>
-                    <a class="ancora" href="avaliacao.html"><button class="btnMenu">Deixe sua avaliação</button></a>  
+                <div class="dicas">
+                    <h1>Dicas da cruzadinha</h1>
+                    <div class="dicasRespostas">
+                        <span>1. Qual o equipamento da Riven?</span>
+                        <span style="color: yellow;" id="resp1"></span>
+                    </div>
+                    <div class="dicasRespostas">
+                        <span>2. Em qual região a Riven foi acolhida?</span>
+                        <span style="color: yellow;" id="resp2"></span>
+                    </div>
+                    <div class="dicasRespostas">
+                        <span>3. Qual o maior inimigo da Riven?</span>
+                        <span style="color: yellow;" id="resp3"></span>
+                    </div>
+                    <div class="dicasRespostas">
+                        <span>4. Qual lane que a Riven joga?</span>
+                        <span style="color: yellow;" id="resp4"></span>
+                    </div>
+                    <div class="dicasRespostas">
+                        <span>5. Qual a categoria da Riven no jogo?</span>
+                        <span style="color: yellow;" id="resp5"></span>
+                    </div>
+                    <button class="btnVerificar" onclick="validarResposta()">validar</button>
                 </div>
             </div>
         </section>
@@ -73,3 +91,4 @@
     </footer>
 </body>
 </html>
+<script src="../js/cruzadinha.js"></script>
