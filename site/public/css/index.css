@@ -133,6 +133,21 @@
 }
 .texto{
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10%;
+}
+.cartoonsRiven{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartoonRiven{
+    width: 50%;
+}
+.cartoonRiven2{
+    width: 30%;
 }
 .HQ{
     width: 35vw;

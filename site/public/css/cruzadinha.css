@@ -34,7 +34,7 @@
     justify-content: center;
     background-color: rgba(97, 69, 69, 0.253);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     height: 20%;
     border-bottom: 1px solid rgb(196, 161, 47);
 }
