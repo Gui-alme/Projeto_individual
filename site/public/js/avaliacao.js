@@ -344,3 +344,7 @@ function listarAvaliacoes(){
         console.error(resposta);
     });
 }
+
+function divSair(){
+    
+}

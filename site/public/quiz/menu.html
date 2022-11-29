@@ -22,7 +22,8 @@
                     <a href="cruzadinha.html"><li>Cruzadinha</li></a>
                     <a href="quiz.html"><li>Quiz</li></a>
                     <a href="avaliacao.html"><li>Avaliações</li></a>
-                    <a href="#"><li>Guilherme<img class="iconPerfil" src="../assets/svg/iconPerfil.svg" alt="icone perfil usuário"></li></a>
+                    <a><li><span id="nomeUser"></span><img class="iconPerfil" src="../assets/svg/iconPerfil.svg" alt="icone perfil usuário"></li></a>
+                    <a href="../index.html"><li style="color: rgb(145, 51, 51);">Sair</li></a>
                 </ul>
             </nav>
         </div>
@@ -73,3 +74,7 @@
     </footer>
 </body>
 </html>
+<script>
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeUser.innerHTML = nome;
+</script>
